@@ -1,0 +1,42 @@
+
+    <div class="container" id="filter">
+      <div class="row">
+        <div class="col-md-2">
+          <select id="selectType" (change)="changeDate()" class="form-control">
+            <option value="date">Date</option>
+            <option value="week">Week</option>
+            <option value="month">Month</option>
+            <option value="number">Year</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <input type="date" id="sinput" class="form-control" >
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary" (click)="getData()">Filter</button>
+        </div>
+    </div>
+
+    <div class="container" id="list">
+          <div class="card-body">
+            <table class="table table-bordered  table table-hover" *ngIf="value==true">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" class="text-primary">Invoice Id</th>
+                  <th scope="col" class="text-primary">Email Id</th>
+                  <th scope="col" class="text-primary">Total Cost</th>
+                  <th scope="col" class="text-primary">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let filter of data">
+                  <td>{{filter.iid}}</td>
+                  <td>{{ filter.cemail }}</td>
+                  <td>{{filter.totalSum}}/-</td>
+                  <td>{{ filter.date | date}}</td>
+                </tr>
+              </tbody> 
+            </table>
+            <h1 *ngIf="value==false"><b>No Records Found</b></h1>
+          </div>
+        </div>

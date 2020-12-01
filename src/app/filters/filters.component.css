@@ -1,0 +1,30 @@
+
+  
+  /* Set a style for all buttons */
+  button{
+    margin:auto;
+    display:block;
+    
+    
+  }  
+ 
+  
+  /* BUTTON STYLES */
+  
+  button:hover{
+    background: #2236ee;
+  }
+  #list {
+    padding: 16px;
+    text-align: center;
+    margin:20px 0 0 0;
+  }
+  #filter {
+    padding: 16px;
+    text-align: center;
+    margin:15px 300px 0 30px;
+  }
+
+  
+  
+  

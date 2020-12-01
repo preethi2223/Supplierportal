@@ -1,0 +1,9 @@
+<form #paymentform="ngForm" (ngSubmit)="payment()">
+<div class="form-group">
+<div class="text-danger">{{msg}}</div>
+<input type="number" class="form-control"  placeholder="Enter your Invoice ID" name="iid" [(ngModel)]="invoices.iid" 
+        required  #iid="ngModel"
+        >
+</div>
+<button [disabled]="paymentform.form.invalid" type="submit">OK</button>
+</form>

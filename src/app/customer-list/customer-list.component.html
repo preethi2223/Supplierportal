@@ -1,0 +1,28 @@
+<div class="container">
+  <h1 style="color: blueviolet;" *ngIf="value==true"><b>Customers List</b></h1>
+      <div class="card-body">
+        <table class="table table-bordered  table table-hover" *ngIf="value==true">
+          <thead class="thead-light">
+            <tr>
+              
+              <th scope="col" class="text-danger">Customer Name</th>
+              <th scope="col" class="text-danger">Email Id</th>
+              <th scope="col" class="text-danger">Upload Invoices</th>
+              <th scope="col" class="text-danger">Pending Invoices</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let customer of data">
+              <td>{{ customer.customerName }}</td>
+              <td><a href="mailto:{{ customer.cemail }}">{{ customer.cemail }}</a></td>
+              <td><a (click)="upload(customer.cemail)" routerLink="/uploadinvoices"><span class="material-icons">
+                cloud_upload</span></a></td>
+              <td><a (click)="upload(customer.cemail)" routerLink="/invoices"><span class="material-icons">
+                view_list</span></a></td>
+            </tr>
+          </tbody> 
+        </table>
+        <h1 style="color: blueviolet;" *ngIf="value==false"><b>No records found</b></h1>
+      </div>
+    </div>
+    

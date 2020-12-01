@@ -1,0 +1,27 @@
+<div class="container">
+      <form (ngSubmit)="addcustomer()" #customerForm="ngForm">
+        <span class="material-icons">person_add</span>
+        <h2><b>Customer Details</b></h2>
+        <div class="text-danger"><b>{{msg}}</b></div>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="customer.customerName" 
+            class="form-control" 
+            id="name" 
+            name="customerName" 
+            placeholder="Enter Customer name"
+            required #customerName="ngModel" [class.is-invalid]="customerName.invalid && customerName.touched"><br>
+        <small class="text-danger" [class.d-none]="customerName.valid || customerName.untouched">Customer Name is required field</small>
+      </div>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="customer.cemail" 
+          class="form-control" 
+          id="cemail" 
+          name="cemail" 
+          placeholder="Enter Email Id"
+          required #cemail="ngModel" [class.is-invalid]="cemail.invalid && cemail.touched"><br>
+      <small class="text-danger" [class.d-none]="cemail.valid || cemail.untouched">Email Id is required field</small>
+    </div>
+    
+        <button type="submit" [disabled]="!customerForm.form.valid" class="btn btn-seconday">Add</button>
+      </form>
+  </div>

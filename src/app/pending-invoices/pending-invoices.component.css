@@ -1,0 +1,18 @@
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+
+
+  .container {
+    padding: 16px;
+    text-align: center;
+    margin:50px 50px 0 250px;
+  }
+
+  span{
+    cursor: pointer;
+    color:rgb(153, 13, 172);
+   
+  }

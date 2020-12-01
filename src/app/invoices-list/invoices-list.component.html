@@ -1,0 +1,33 @@
+
+<div class="container">
+    <h1 style="color: rgb(194, 13, 110);" *ngIf="value==true"><b>Invoices List</b></h1>
+    <h3><b>Customer:{{cemail}}</b></h3>
+    <div class="text-success"><b>{{msg}}</b></div>
+        <div class="card-body">
+          <table class="table table-bordered  table table-hover" *ngIf="value==true">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col" class="text-success">Invoice Id</th>
+                <th scope="col" class="text-success">TotalCost</th>
+                <th scope="col" class="text-success">Status</th>
+                <th scope="col" class="text-success">Email</th>
+                
+                
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fd of data">
+                  <td>{{fd.iid}}</td>
+                  <td>{{fd.totalSum}}/-</td>
+                  <td>{{fd.status}}</td>
+                 <td><a (click)="file(fd.iid)" href="http://localhost:8080/exportinvoices">
+                  <span class="material-icons">email</span></a></td>
+                </tr>
+              </tbody> 
+          </table>
+          <h1 style="color: rgb(194, 13, 110);" *ngIf="value==false"><b>No Pending Invoices to show</b></h1>
+        </div>
+      </div>
+    
+     
+  

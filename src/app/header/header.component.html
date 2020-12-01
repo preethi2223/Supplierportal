@@ -1,0 +1,39 @@
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <img src="../../assets/img/Logo.png" width="150px" height="60px"> 
+    
+
+    
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/invoiceid'" *ngIf="!_service.isLogin()">Customer Payment</a>
+      <a mat-button [routerLink]="'/login'" *ngIf="!_service.isLogin()">Login</a>
+      <a mat-raised-button [routerLink]="'/registersupplier'" *ngIf="!_service.isLogin()"> SignUp</a>
+      <a mat-raised-button *ngIf="_service.isLogin()" [routerLink]="'/logout'" >Logout</a>
+     
+    </div>  
+  </mat-toolbar-row>  
+</mat-toolbar>
+
+<h1 class="heading" *ngIf="!_service.isLogin()"><b>Welcome to Supplier Portal!</b></h1>
+
+
+<div class="d-flex" id="wrapper">
+
+ 
+  <div class="bg-light border-light" id="sidebar-wrapper">
+    
+   
+    <div class="list-group list-group-flush">
+     
+      <a  class="list-group-item list-group-item-action bg-light" *ngIf="_service.isLogin()"></a>
+      <a routerLink="/addcustomer" class="list-group-item list-group-item-action bg-light" *ngIf="_service.isLogin()">Add Customer</a>
+      <a routerLink="/customers" class="list-group-item list-group-item-action bg-light" *ngIf="_service.isLogin()">Customers List</a>
+      <a routerLink="/frequency" class="list-group-item list-group-item-action bg-light" *ngIf="_service.isLogin()">Filters</a>
+      <a  class="list-group-item list-group-item-action bg-light" *ngIf="_service.isLogin()"></a>
+    </div>
+  </div> 
+
+  <router-outlet></router-outlet>
+

@@ -1,0 +1,37 @@
+
+<div class="container">
+    <h1 style="color: rgb(218, 69, 10);"><b>Invoices List</b></h1>
+        <div class="card-body">
+          <table class="table table-bordered  table table-hover">
+            <thead class="thead-light">
+              <tr>
+               
+                <th scope="col" class="text-primary">Groceries</th>
+                <th scope="col" class="text-primary">Quantity</th>
+                <th scope="col" class="text-primary">UnitPrice</th>
+                <th scope="col" class="text-primary">TotalPrice</th>
+                <th scope="col" class="text-primary">Status</th>
+                
+                
+                
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fd of data">
+                 
+                  <td>{{fd.groceries}}</td>
+                  <td>{{fd.quantity}}</td>
+                  <td>{{fd.unitPrice}}</td>
+                  <td>{{fd.totalPrice}}</td>
+                  <td>{{fd.status}}</td>
+                </tr>
+              </tbody> 
+          </table>
+        </div>
+        <span class="material-icons" routerLink="/makepayment">payment</span>
+        <h2><b style="color: rgb(141, 29, 206);">Pay Here:</b></h2>
+      </div>
+     
+      
+     
+  
